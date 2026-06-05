@@ -22,11 +22,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    # تثبيت وإعداد Gradle بالإصدار المحدد المتوافق مع المشروع
+    # تثبيت وإعداد Gradle بالإصدار 8.5 المتوافق مع المشروع
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
       with:
-        gradle-version: '8.2.2'
+        gradle-version: '8.5'
 
     - name: Build Debug APK
       run: gradle assembleDebug
