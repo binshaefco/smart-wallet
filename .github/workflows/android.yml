@@ -22,13 +22,14 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
+    # تثبيت وإعداد Gradle بالإصدار المحدد المتوافق مع المشروع
     - name: Setup Gradle
-      run: |
-        gradle wrapper
-        chmod +x gradlew
+      uses: gradle/actions/setup-gradle@v3
+      with:
+        gradle-version: '8.2.2'
 
     - name: Build Debug APK
-      run: ./gradlew assembleDebug
+      run: gradle assembleDebug
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
